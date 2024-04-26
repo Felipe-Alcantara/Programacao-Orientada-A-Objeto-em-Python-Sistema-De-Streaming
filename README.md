@@ -1,0 +1,2 @@
+# Programacao-Orientada-A-Objeto-em-Python-Sistema-Netflix
+ Este é um código Python que simula um sistema de streaming de filmes, semelhante ao Netflix. Ele define uma classe `Cliente` com atributos como `Nome`, `Email` e `Plano`. A classe inclui métodos para verificar a validade do plano, mudar o plano e verificar a disponibilidade de um filme com base no plano do cliente. O código também inclui um exemplo de como criar um objeto `Cliente` e como usar seus métodos.
