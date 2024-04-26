@@ -25,13 +25,19 @@ class Cliente:
             raise Exception("Erro de plano")
 
 
-    def ver_filme(self, filme, Plano_Filme):
-        if self.Plano == Plano_Filme:
-            print(f"Filme {filme} disponível")
+    def ver_filme(self, filme): #Neste caso "filme" significa o self da classe "Filme"
+        if self.Plano == filme.planoNecessario:
+            print(f"Filme: {filme.nomeFilme} disponível")
         elif self.Plano == "Premium":
-            print(f"Filme {filme} disponível")
-        elif self.Plano == "Basic" and Plano_Filme == "Premium":
-            print(f"Filme {filme} indisponível")
+            print(f"Filme: {filme.nomeFilme} disponível")
+        elif self.Plano == "Basic" and filme.planoNecessario == "Premium":
+            print(f"Filme: {filme.nomeFilme} para o usuário: {self.Nome} está: indisponível")
+
+class Filme:
+    def __init__(self, nomeFilme, classificacao, planoNecessario) -> None:
+        self.nomeFilme = nomeFilme
+        self.classificacao = classificacao
+        self.planoNecessario = planoNecessario
 
 try:
     PrimeiroCliente = Cliente("Felipe", "Felipe@Gmail.com", "Basic")
@@ -40,12 +46,14 @@ try:
 except Exception as e:
     print("Erro: ", e) 
 
+Filme_Premium = Filme("Filme teste", "Livre", "Premium")
+
 # Testando acesso ao filme pelo plano
-PrimeiroCliente.ver_filme("Filme", "Premium")
+PrimeiroCliente.ver_filme(Filme_Premium)
 
 # Botão upgrade:
 PrimeiroCliente.mudar_plano("Premium")
 print(f"Seu plano atual agora é: {PrimeiroCliente.Plano}")
 
 # Testando acesso ao filme pelo plano
-PrimeiroCliente.ver_filme("Filme", "Premium")
+PrimeiroCliente.ver_filme(Filme_Premium)
