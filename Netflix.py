@@ -40,8 +40,11 @@ try:
 except Exception as e:
     print("Erro: ", e) 
 
+# Testando acesso ao filme pelo plano
+PrimeiroCliente.ver_filme("Filme", "Premium")
+
 # Botão upgrade:
-PrimeiroCliente.mudar_plano("Basic")
+PrimeiroCliente.mudar_plano("Premium")
 print(f"Seu plano atual agora é: {PrimeiroCliente.Plano}")
 
 # Testando acesso ao filme pelo plano
