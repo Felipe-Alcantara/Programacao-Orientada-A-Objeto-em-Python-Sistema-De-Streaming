@@ -7,6 +7,8 @@ class Cliente:
         self.Planos_disponíveis = ["Basic", "Premium"]
         if not self.plano_invalido(Plano):
             raise Exception("Erro de plano")
+        if not self.cliente_existente():
+            self.salvar_cliente()
 
     def __str__(self) -> str:
         return "Nome: {}\nEmail: {}\nPlano: {}".format(self.Nome, self.Email, self.Plano)
@@ -33,6 +35,18 @@ class Cliente:
         elif self.Plano == "Basic" and filme.planoNecessario == "Premium":
             print(f"Filme: {filme.nomeFilme} para o usuário: {self.Nome} está: indisponível")
 
+    def salvar_cliente(self):
+        with open("Clientes.txt", "a", encoding='utf-8') as f:
+            f.write(f"Cliente: {self.Nome}, Email: {self.Email}, Plano: {self.Plano}\n")
+
+    def cliente_existente(self):
+        try:
+            with open("Clientes.txt", "r", encoding="utf-8") as f:
+                return f"Cliente: {self.Nome}, Email: {self.Email}, Plano: {self.Plano}\n" in f.read()
+        except FileNotFoundError:
+            return False
+
+
 class Filme:
     def __init__(self, nomeFilme, classificacao, planoNecessario) -> None:
         self.nomeFilme = nomeFilme
@@ -43,6 +57,12 @@ try:
     PrimeiroCliente = Cliente("Felipe", "Felipe@Gmail.com", "Basic")
     print(PrimeiroCliente.__str__())
 # Cliente.add_to_database #Para adicionar as informações ao banco de dados
+except Exception as e:
+    print("Erro: ", e) 
+
+try:
+    SegundoCliente = Cliente("Júlio", "Júlio@Gmail.com", "Premium")
+    print(PrimeiroCliente.__str__())
 except Exception as e:
     print("Erro: ", e) 
 
