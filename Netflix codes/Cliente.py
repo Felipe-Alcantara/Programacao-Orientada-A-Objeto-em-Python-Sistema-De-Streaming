@@ -1,5 +1,5 @@
 class Cliente:
-    def __init__(self, Nome, Email, Plano) -> None:
+    def __init__(self, Nome, Email, Plano, idade) -> None:
         self.Nome = Nome
         self.Email = Email
         self.Planos_disponíveis = ["Basic", "Premium"]
@@ -9,6 +9,7 @@ class Cliente:
             raise Exception("Erro de plano")
         if self.numero_Cliente is None:
             self.salvar_cliente()
+        self.idade = idade
 
     def __str__(self) -> str:
         return f"Cliente {self.numero_Cliente}: Nome: {self.Nome}\nEmail: {self.Email}\nPlano: {self.Plano}"
@@ -28,13 +29,25 @@ class Cliente:
             raise Exception("Erro de plano")
 
 
-    def ver_filme(self, filme): #Neste caso "filme" significa o self da classe "Filme"
+    def verificar_plano(self, filme): #Neste caso "filme" significa o self da classe "Filme"
+        if self.Plano == "Premium":
+            return True
         if self.Plano == filme.planoNecessario:
-            print(f"Filme: {filme.nomeFilme} disponível")
-        elif self.Plano == "Premium":
-            print(f"Filme: {filme.nomeFilme} disponível")
-        elif self.Plano == "Basic" and filme.planoNecessario == "Premium":
-            print(f"Filme: {filme.nomeFilme} para o usuário: {self.Nome} está: indisponível")
+            return True
+        else:
+            return False
+
+    def verificar_class(self, filme):
+        if filme.classificacao == "L":
+            return True
+        if self.idade >= filme.classificacao:
+            return True
+        else:
+            return False
+
+    def verificar(self, filme):
+        return self.verificar_plano(filme) and self.verificar_class(filme) 
+
 
     def salvar_cliente(self):
         try:

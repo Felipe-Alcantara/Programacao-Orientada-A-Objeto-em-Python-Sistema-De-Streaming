@@ -2,22 +2,33 @@ from Cliente import Cliente
 from Filme import Filme
 
 try:
-    CriarCliente = Cliente("Felixo", "Felixo@Gmail.com", "Basic")
-    print(CriarCliente.__str__())  # Aqui deve ser CriarCliente, não PrimeiroCliente
+    cliente = Cliente("batatatata", "Felixo@Gmail.com", "Basic", 18)
+    print(cliente.__str__())  # Aqui deve ser cliente, não PrimeiroCliente
     print()
 except Exception as e:
     print("Erro: ", e)
 
-Filme_Premium = Filme("Filme teste", "Livre", "Premium")
+filme = Filme("Filme teste", 10, "Basic")
 
-# Testando acesso ao filme pelo plano
-CriarCliente.ver_filme(Filme_Premium)
-print()
+resultado = cliente.verificar(filme)
+print(resultado)
 
-# Botão upgrade:
-CriarCliente.mudar_plano("Premium")
-print(f"Seu plano atual agora é: {CriarCliente.Plano}")
-print()
+if resultado == True:
+    print("Disponível")
+else:
+    print("indisponível")
 
-# Testando acesso ao filme pelo plano
-CriarCliente.ver_filme(Filme_Premium)
+# # Testando acesso ao filme pelo plano
+# resultado = cliente.verificar_plano(Filme_Premium)
+# print(resultado)
+
+# # Botão upgrade:
+# cliente.mudar_plano("Premium")
+# print(f"Seu plano atual agora é: {cliente.Plano}")
+# print()
+
+# # Testando acesso ao filme pelo plano
+# resultado = cliente.verificar_plano(Filme_Premium)
+# print(resultado)
+# # Testando acesso ao filme pelo plano
+# cliente.ver_filme(Filme_Premium)
