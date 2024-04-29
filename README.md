@@ -1,35 +1,33 @@
-# Programação Orientada a Objetos em Python - Sistema Netflix
+# Sistema de Gerenciamento de Clientes e Filmes
 
-Este repositório contém um projeto simples que simula algumas funcionalidades do sistema Netflix. O projeto é escrito em Python e utiliza o paradigma de Programação Orientada a Objetos (POO).
+Este repositório contém um sistema de gerenciamento de clientes e filmes, construído em Python. O sistema é composto por três arquivos principais: `Cliente.py`, `Filme.py` e `main.py`.
 
-## Arquivos
+## Cliente.py
 
-O projeto é composto por três arquivos principais:
+O arquivo `Cliente.py` define a classe `Cliente`, que representa um cliente com atributos como `Nome`, `Email`, `Plano` e `idade`. A classe `Cliente` também possui vários métodos para gerenciar e verificar informações do cliente.
 
-1. `Cliente.py`: Este arquivo define a classe `Cliente`, que representa um cliente da Netflix. Cada cliente tem um nome, email e plano de assinatura.
+- `__init__`: Este é o construtor da classe que inicializa os atributos do cliente.
+- `__str__`: Este método retorna uma representação em string do cliente.
+- `plano_invalido`: Este método verifica se o plano do cliente é válido.
+- `mudar_plano`: Este método permite ao cliente mudar seu plano.
+- `verificar_plano`: Este método verifica se o plano do cliente permite assistir a um determinado filme.
+- `verificar_class`: Este método verifica se a idade do cliente permite assistir a um filme com uma determinada classificação etária.
+- `verificar`: Este método verifica se o cliente pode assistir a um determinado filme.
+- `salvar_cliente`: Este método salva os detalhes do cliente em um arquivo.
+- `cliente_existente`: Este método verifica se o cliente já existe no arquivo.
 
-2. `Filme.py`: Este arquivo define a classe `Filme`, que representa um filme disponível na Netflix. Cada filme tem um nome, classificação etária e plano necessário para acessá-lo.
+## Filme.py
 
-3. `main.py`: Este é o arquivo principal que utiliza as classes `Cliente` e `Filme` para simular a interação de um cliente com o sistema Netflix.
+O arquivo `Filme.py` define a classe `Filme`, que representa um filme com atributos como `nomeFilme`, `classificacao` e `planoNecessario`.
 
-## Funcionalidades
+## main.py
 
-### Classe Cliente
+O arquivo `main.py` é o ponto de entrada do sistema. Ele importa as classes `Cliente` e `Filme`, cria uma instância de cada uma e verifica se o cliente pode assistir ao filme.
 
-A classe `Cliente` possui várias funcionalidades:
+## Como o sistema foi construído
 
-- **Inicialização**: Ao criar um novo cliente, é necessário fornecer um nome, email e plano de assinatura. Se o plano fornecido não for válido, uma exceção será lançada.
+O sistema foi construído usando a linguagem de programação Python. Ele segue o paradigma de programação orientada a objetos (OOP), o que torna o código mais modular e fácil de manter. Cada classe tem responsabilidades claras, o que facilita a compreensão do código.
 
-- **Mudança de plano**: Um cliente pode mudar seu plano de assinatura a qualquer momento.
+## Utilidade do código
 
-- **Visualização de filmes**: Um cliente pode tentar assistir a um filme. Se o plano de assinatura do cliente for compatível com o plano necessário do filme, o filme estará disponível para visualização.
-
-- **Salvamento de clientes**: Quando um novo cliente é criado, seus detalhes são salvos em um arquivo chamado `Clientes.txt`.
-
-### Classe Filme
-
-A classe `Filme` é mais simples e apenas contém informações sobre um filme.
-
-## Utilidade
-
-Este projeto pode ser útil para entender os conceitos básicos de POO em Python. Ele mostra como definir classes, criar objetos, usar métodos e interagir com arquivos. Embora seja um projeto simples, ele pode ser expandido com novas funcionalidades para torná-lo mais complexo e interessante.
+Este código pode ser útil para qualquer pessoa que esteja construindo um sistema de gerenciamento de clientes ou um serviço de streaming de filmes. Ele fornece uma estrutura básica para gerenciar clientes e filmes, e pode ser facilmente expandido para incluir mais funcionalidades. Além disso, o código é um bom exemplo de programação orientada a objetos em Python, o que pode ser útil para fins educacionais.
