@@ -2,3 +2,5 @@ Cliente 2: Felixo, Email: Felixo@Gmail.com, Plano: Basic
 Cliente 2: nassinger, Email: Felixo@Gmail.com, Plano: Basic
 Cliente 3: arroz, Email: Felixo@Gmail.com, Plano: Basic
 Cliente 4: batatatata, Email: Felixo@Gmail.com, Plano: Basic
+Cliente 5: batatatata22, Email: Felixo@Gmail.com, Plano: Basic
+Cliente 6: teste da senha, Email: Felixo@Gmail.com, Plano: Basic, Senha: semja

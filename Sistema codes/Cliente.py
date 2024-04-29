@@ -1,10 +1,11 @@
 class Cliente:
-    def __init__(self, Nome, Email, Plano, idade) -> None:
+    def __init__(self, Nome, Email, Plano, idade, senha) -> None:
         self.Nome = Nome
         self.Email = Email
         self.Planos_disponíveis = ["Basic", "Premium"]
         self.Plano = Plano  # inicializar self.Plano aqui
         self.numero_Cliente = self.cliente_existente()
+        self.senha = senha
         if not self.plano_invalido():
             raise Exception("Erro de plano")
         if self.numero_Cliente is None:
@@ -12,7 +13,7 @@ class Cliente:
         self.idade = idade
 
     def __str__(self) -> str:
-        return f"Cliente {self.numero_Cliente}: Nome: {self.Nome}\nEmail: {self.Email}\nPlano: {self.Plano}"
+        return f"Cliente {self.numero_Cliente}: Nome: {self.Nome}\nEmail: {self.Email}\nPlano: {self.Plano}\nsenha: {self.senha}"
 
     
     def plano_invalido(self):  # remover o argumento Plano
@@ -63,7 +64,7 @@ class Cliente:
             self.numero_Cliente = 1
         
         with open("Clientes.txt", "a", encoding="utf-8") as f:
-            f.write(f"Cliente {self.numero_Cliente}: {self.Nome}, Email: {self.Email}, Plano: {self.Plano}\n")
+            f.write(f"Cliente {self.numero_Cliente}: {self.Nome}, Email: {self.Email}, Plano: {self.Plano}, Senha: {self.senha}\n")
 
     def cliente_existente(self):
         try:
