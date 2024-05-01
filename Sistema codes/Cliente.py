@@ -22,13 +22,16 @@ class Cliente:
         else:
             return False
     
-    def mudar_plano(self, novo_plano):
-        if novo_plano in self.Planos_disponíveis:
-                self.Plano = novo_plano
-                return True
+    def mudar_plano(self, novo_plano, senha_correta):
+        if self.senha == senha_correta:
+            if novo_plano in self.Planos_disponíveis:
+                    self.Plano = novo_plano
+                    print("Plano modificado")
+                    return True
+            else:
+                raise Exception("Erro de plano")
         else:
-            raise Exception("Erro de plano")
-
+                raise Exception("Senha incorreta")
 
     def verificar_plano(self, filme): #Neste caso "filme" significa o self da classe "Filme"
         if self.Plano == "Premium":

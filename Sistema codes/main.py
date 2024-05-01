@@ -8,14 +8,17 @@ try:
 except Exception as e:
     print("Erro: ", e)
 
-filme = Filme("Filme teste txt", 10, "Basic")
-filme.salvar_filme()
+# filme = Filme("Filme teste txt", 10, "Basic")
+# filme.salvar_filme()
 
-resultado = cliente.verificar(filme)
-print(resultado)
-print()
+# resultado = cliente.verificar(filme)
+# print(resultado)
+# print()
 
-if resultado == True:
-    print("Disponível")
-else:
-    print("indisponível")
+# if resultado == True:
+#     print("Disponível")
+# else:
+#     print("indisponível")
+
+cliente.mudar_plano("Premium", "semja")
+print(cliente.Nome)
