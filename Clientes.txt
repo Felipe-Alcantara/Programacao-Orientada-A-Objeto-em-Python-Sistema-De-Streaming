@@ -1,1 +1,2 @@
 Cliente 1: teste da senha, Email: Felixo@Gmail.com, Plano: Basic, Senha: semja
+Cliente 2: teste da senha2, Email: Felixo@Gmail.com2, Plano: Premium, Senha: semja2
