@@ -7,18 +7,22 @@ try:
     print()
 except Exception as e:
     print("Erro: ", e)
+print()
 
-# filme = Filme("Filme teste txt", 10, "Basic")
-# filme.salvar_filme()
+filme = Filme("Filme teste txt", 10, "Basic")
+filme.salvar_filme()
+print()
 
-# resultado = cliente.verificar(filme)
-# print(resultado)
-# print()
+resultado = cliente.verificar(filme)
+print(resultado)
+print()
 
-# if resultado == True:
-#     print("Disponível")
-# else:
-#     print("indisponível")
+if resultado == True:
+    print("Disponível")
+else:
+    print("indisponível")
+print()
 
 cliente.mudar_plano("Premium", "semja")
 print(cliente.Nome)
+print()
